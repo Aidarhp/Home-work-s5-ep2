@@ -18,7 +18,7 @@ function App() {
         <ul className="main__ul">
           {tasks.map((item) => (
             <li className="main__ul-li" key={item.id} style={ {color:item.isImpotent ? "red" : ''}} >{item.task}
-            <button className="main__btn" type="button" onClick={() => dispath(deleteTasks(item.id))}>Удалить</button>
+            <button className="main__btn" type="button" style={{display:item.isImpotent ? 'none' : ''}} onClick={() => dispath(deleteTasks(item.id))}>Удалить</button>
             <button className="main__btn" type="button" onClick={() => dispath(importantTasks(item.id))}>Important</button>
             <button className="main__btn" type="button" onClick={() => {dispath(ChangeTasks(item.id, setTodo(item.task)))}}>change</button>
             </li>
